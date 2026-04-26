@@ -4,6 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { List } from './components/List'
 import { AddForm } from './components/AddForm'
+import { Filter } from './components/Filter'
 import './App.css'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <>
             <AddForm></AddForm>
             <List></List>
+            <Filter></Filter>
         </>
     )
 }
