@@ -67,6 +67,21 @@ const pokemonSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     });
+
+    
+    builder.addCase(removePokemons.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(removePokemons.fulfilled, (state, action) => {
+      state.loading = false;
+      state.pokemons = state.pokemons.filter(pokemon => pokemon.id !== action.payload)
+      // console.log("action.payload", action.payload);
+      
+    });
+    builder.addCase(removePokemons.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    });
   },
 });
 

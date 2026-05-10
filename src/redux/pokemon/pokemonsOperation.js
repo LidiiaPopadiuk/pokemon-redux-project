@@ -41,11 +41,11 @@ export const removePokemons = createAsyncThunk(
   "pokemons/ removePokemons", 
   async (pokemonId, thunkAPI) => {
     try {
-      const fetchData = await axios.del(`${baseUrl}/pokemons`, pokemonId);
+      const fetchData = await axios.delete(`${baseUrl}/pokemons/${pokemonId}`);
       const data = fetchData.data
       console.log(data);
       
-      return data
+      return pokemonId
     } catch (err) {
        return thunkAPI.rejectWithValue(err.massage)
     }
