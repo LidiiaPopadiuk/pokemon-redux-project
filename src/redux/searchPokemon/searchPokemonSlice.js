@@ -11,7 +11,7 @@ const filterSlice = createSlice({
             },
             prepare(value) {
                 return {
-                    payload: value.toLowerCase()
+                    payload: value
                 }
             }
         }

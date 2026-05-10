@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { addPokemon } from "../redux/pokemon/pokemonSlice"
+import { addPokemons } from "../redux/pokemon/pokemonsOperation"
 
 export const AddForm = () => {
     const dispatch = useDispatch()
@@ -10,7 +10,7 @@ export const AddForm = () => {
         const name = e.target.elements.pokemonName.value 
         const element = e.target.elements.pokemonElement.value 
 
-        dispatch(addPokemon({name, element}))
+        dispatch(addPokemons({name, element}))
 
         e.target.reset()
     }
